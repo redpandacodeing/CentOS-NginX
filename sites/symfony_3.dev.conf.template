@@ -1,7 +1,7 @@
 server {
     listen 80;
     listen [::]:80;
-    server_name  0.0.0.0 default_server;
+    server_name  0.0.0.0 *.elasticbeanstalk.com default_server;
     root /opt/app/__projectname__/web;
 
 
