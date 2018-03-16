@@ -26,3 +26,5 @@ else
   echo "${PROJECT_NAME} project does not exist or does not contain app${file}.php file!"
 fi
 echo "### FINISHED NginX Conf ###"
+
+nginx
