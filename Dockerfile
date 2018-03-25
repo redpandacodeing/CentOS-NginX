@@ -1,7 +1,8 @@
 FROM centos:7
 MAINTAINER 'Jordan Wamser <jwamser@redpandacoding.com>'
 
-ENV DEV_SERVER='' PROJECT_NAME='Symfony' DOMAINS='_' FPM_HOST=127.0.0.1 FPM_HOST=9000
+ENV DEV_SERVER='' PROJECT_NAME='Symfony' DOMAINS='_' FPM_HOST=127.0.0.1 FPM_PORT=9000
+ENV APP_ENV='prod'
 
 RUN yum update -y && \
     yum install -y epel-release \
