@@ -6,7 +6,7 @@ create_conf(){
     else
         confmode='prod'
     fi
-    sed -e "s|__projectname__|${PROJECT_NAME}|g;s|__FPMHOST__|${FPM_HOST}|g;s|__FPMPORT__|${FPM_PORT}|g;s|__domain__|${DOMAINS}|g" /etc/nginx/conf.d/symfony_4.${confmode}.conf.template > /etc/nginx/conf.d/default.conf
+    sed -e "s|__projectname__|${PROJECT_NAME}|g;s|__FPMHOST__|${FPM_HOST}|g;s|__FPMPORT__|${FPM_PORT}|g;s|__domain__|${DOMAINS}|g" /etc/nginx/conf.d/symfony_3.${confmode}.conf.template > /etc/nginx/conf.d/default.conf
 }
 
 file=''
@@ -18,12 +18,12 @@ if [ -n "${DEV_SERVER}" ]; then
     mode='<<!!! DEV SERVER !!!>>'
 fi
 
-if [ -e /opt/app/${PROJECT_NAME}/web/index${file}.php ]
+if [ -e /opt/app/${PROJECT_NAME}/web/app${file}.php ]
 then
   echo "Creating Symfony Project - Project Name: ${PROJECT_NAME} ${mode} "
   create_conf
 else
-  echo "${PROJECT_NAME} project does not exist or does not contain index${file}.php file!"
+  echo "${PROJECT_NAME} project does not exist or does not contain app${file}.php file!"
 fi
 echo "### FINISHED NginX Conf ###"
 
